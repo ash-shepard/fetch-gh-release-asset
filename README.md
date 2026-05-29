@@ -1,5 +1,7 @@
 # Fetch GH Release Asset
 
+This is a fork of the [original project](https://github.com/dsaltares/fetch-gh-release-asset) with updates to support node24 before [deprecation of node20](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/) on GitHub runners. Please go support the original project! I literally only forked this because the node24 support hasn't been merged and node20 drops out of support in literally days. 
+
 This action downloads an asset from a GitHub release and provides some release details as output. Private repos are supported.
 
 ## Inputs
@@ -51,9 +53,9 @@ The body (description) of a release.
 Save a single asset as a new file `<workspace>/plague-linux.zip`:
 
 ```yaml
-uses: dsaltares/fetch-gh-release-asset@master
+uses: ash-shepard/fetch-gh-release-asset@master
 with:
-  repo: 'dsaltares/godot-wild-jam-18'
+  repo: 'ash-shepard/godot-wild-jam-18'
   version: 'tags/v0.1.18'
   file: 'plague-linux.zip'
   token: ${{ secrets.GITHUB_TOKEN }}
@@ -62,9 +64,9 @@ with:
 Save a single asset as a new file `<workspace>/subdir/plague-linux.zip`:
 
 ```yaml
-uses: dsaltares/fetch-gh-release-asset@master
+uses: ash-shepard/fetch-gh-release-asset@master
 with:
-  repo: 'dsaltares/godot-wild-jam-18'
+  repo: 'ash-shepard/godot-wild-jam-18'
   version: 'tags/v0.1.18'
   file: 'plague-linux.zip'
   target: 'subdir/plague-linux.zip'
@@ -74,9 +76,9 @@ with:
 Save a range of assets as new files in directory `<workspace>`:
 
 ```yaml
-uses: dsaltares/fetch-gh-release-asset@master
+uses: ash-shepard/fetch-gh-release-asset@master
 with:
-  repo: 'dsaltares/godot-wild-jam-18'
+  repo: 'ash-shepard/godot-wild-jam-18'
   version: 'tags/v0.1.18'
   regex: true
   file: "plague-.*\\.zip"
@@ -86,9 +88,9 @@ with:
 Save a range of assets as new files in directory `<workspace>/subdir`:
 
 ```yaml
-uses: dsaltares/fetch-gh-release-asset@master
+uses: ash-shepard/fetch-gh-release-asset@master
 with:
-  repo: 'dsaltares/godot-wild-jam-18'
+  repo: 'ash-shepard/godot-wild-jam-18'
   version: 'tags/v0.1.18'
   regex: true
   file: "plague-.*\\.zip"
